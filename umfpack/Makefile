@@ -1,4 +1,4 @@
-all: umfpack-demo1 umfpack-demo2 umfpack-demo3
+all: umfpack-demo1 umfpack-demo2 umfpack-demo3 umfpack-demo4
 
 umfpack-demo1: umfpack-demo1.o array.h sparse.o xmalloc.o
 	gcc umfpack-demo1.o array.h sparse.o xmalloc.o -o umfpack-demo1 -lumfpack
@@ -9,6 +9,9 @@ umfpack-demo2: umfpack-demo2.o array.h sparse.o xmalloc.o
 umfpack-demo3: umfpack-demo3.o array.h sparse.o xmalloc.o
 	gcc umfpack-demo3.o array.h sparse.o xmalloc.o -o umfpack-demo3 -lumfpack
 
+umfpack-demo4: umfpack-demo4.o array.h sparse.o xmalloc.o
+	gcc umfpack-demo4.o array.h sparse.o xmalloc.o -o umfpack-demo4 -lumfpack
+
 umfpack-demo1.o: umfpack-demo1.c
 	gcc -c -Wall -pedantic -std=c99 -O2 umfpack-demo1.c
 
@@ -17,6 +20,9 @@ umfpack-demo2.o: umfpack-demo2.c
 
 umfpack-demo3.o: umfpack-demo3.c
 	gcc -c -Wall -pedantic -std=c99 -O2 umfpack-demo3.c
+
+umfpack-demo4.o: umfpack-demo4.c
+	gcc -c -Wall -pedantic -std=c99 -O2 umfpack-demo4.c
 
 sparse.o: sparse.c sparse.h
 	gcc -c -Wall -pedantic -std=c99 -O2 sparse.c
